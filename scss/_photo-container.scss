@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 @import 'buttons';
 
 .photo_editor_container {
@@ -6,16 +7,48 @@
     width: 800px;
     margin: auto;
     padding: 16px;
-    box-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 24px -8px rgba(0, 0, 0, 0.6);
+    .title_container h2 {
+        font-family: 'Arvo', serif;
+        font-size: 32px;
+    }
     .inner_container {
         display: flex;
         flex-direction: row;
         .left_container {
             margin-right: 40px;
             width: 360px;
-        }
-        .range_container input {
-            width: 360px;
+            h3 {
+                margin-top: 0;
+            }
+            .range_container {
+                width: 340px;
+                .range_info {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 600;
+                }
+                input {
+                    width: 340px;
+                }
+            } 
         }
     }
+}
+
+.filters_container > button,
+.other_options_container > button {
+    @include button;
+}
+
+.filters_container > button {
+    width: 45%;
+    margin-right: 4%;
+    margin-bottom: 4%;
+}
+
+.other_options_container > button {
+    width: 20%;
+    margin-right: 4%;
+    margin-top: 4%;
 }
