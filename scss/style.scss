@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import 'buttons';
+@import 'photo-container';
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    height: 100vh;
 }
