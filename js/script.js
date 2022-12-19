@@ -1,5 +1,7 @@
 const fileUpload = document.getElementById("file-upload");
 const addImgBtn = document.querySelector(".add-image-btn");
+const filterBtns = document.querySelectorAll(".filters_container > button");
+const filterTitle = document.querySelector(".range_container .range_info .range-title");
 const showImg = document.querySelector(".right_container .image_container img");
 
 addImgBtn.addEventListener("click", () => fileUpload.click());
@@ -12,5 +14,15 @@ const loadImg = () => {
     showImg.src = URL.createObjectURL(img);
     showImg.classList.add("active");
 }
+
+filterBtns.forEach(button => {
+    button.addEventListener("click", () => {
+        filterBtns.forEach(btnActive => { 
+            btnActive.classList.remove("active");
+        });
+        button.classList.add("active");
+        filterTitle.innerText = button.innerText;
+    });
+});
 
 fileUpload.addEventListener("change", loadImg);
