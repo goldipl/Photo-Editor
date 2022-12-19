@@ -37,6 +37,8 @@
 }
 .photo_editor_container .inner_container .right_container .image_container {
   position: relative;
+  width: 400px;
+  height: 300px;
 }
 .photo_editor_container .inner_container .right_container .image_container::after {
   position: absolute;
@@ -49,6 +51,18 @@
   height: 64px;
   background: url(./../img/image_icon.svg) no-repeat;
   background-size: 64px 64px;
+}
+.photo_editor_container .inner_container .right_container .image_container img {
+  position: relative;
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.photo_editor_container .inner_container .right_container .image_container img.active {
+  z-index: 1;
 }
 
 .buttons_container {
