@@ -150,6 +150,9 @@
   margin-right: 4%;
   margin-bottom: 4%;
 }
+.filters_container > button.active {
+  font-weight: 600;
+}
 
 .other_options_container > button {
   width: 20%;
