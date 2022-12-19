@@ -10,6 +10,7 @@ const loadImg = () => {
     // return if image hasn't selected
     if(!img) return;
     showImg.src = URL.createObjectURL(img);
+    showImg.classList.add("active");
 }
 
 fileUpload.addEventListener("change", loadImg);
