@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-@import 'buttons';
 
 .photo_editor_container {
     display: flex;
@@ -34,22 +33,23 @@
                 }
             } 
         }
+        .right_container {
+            .image_container {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 64px;
+                    height: 64px;
+                    background: url(./../img/image_icon.svg) no-repeat;
+                    background-size: 64px 64px;
+                }
+            }
+        }
     }
 }
 
-.filters_container > button,
-.other_options_container > button {
-    @include button;
-}
-
-.filters_container > button {
-    width: 45%;
-    margin-right: 4%;
-    margin-bottom: 4%;
-}
-
-.other_options_container > button {
-    width: 20%;
-    margin-right: 4%;
-    margin-top: 4%;
-}

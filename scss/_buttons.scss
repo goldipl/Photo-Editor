@@ -13,3 +13,20 @@
         margin-left: 16px;
     }
 }
+
+.filters_container > button,
+.other_options_container > button {
+    @include button;
+}
+
+.filters_container > button {
+    width: 45%;
+    margin-right: 4%;
+    margin-bottom: 4%;
+}
+
+.other_options_container > button {
+    width: 20%;
+    margin-right: 4%;
+    margin-top: 4%;
+}
