@@ -17,6 +17,8 @@ const loadImg = () => {
     showImg.classList.add("active");
 }
 
+fileUpload.addEventListener("change", loadImg);
+
 filterBtns.forEach(button => {
     button.addEventListener("click", () => {
         filterBtns.forEach(btnActive => { 
@@ -26,8 +28,6 @@ filterBtns.forEach(button => {
         filterTitle.innerText = button.innerText;
     });
 });
-
-fileUpload.addEventListener("change", loadImg);
 
 const updateRange = () => {
     filterRangeValue.innerText = `${filterRange.value}%`
