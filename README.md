@@ -16,6 +16,7 @@ Project was created with:
 ## Screens
 * Desktop version :computer:     
 
+![screenshot](./img/screenshot_desktop.png)
 
 * Mobile version :iphone:     
 
