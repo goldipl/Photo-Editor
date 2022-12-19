@@ -1,6 +1,8 @@
 const fileUpload = document.getElementById("file-upload");
 const addImgBtn = document.querySelector(".add-image-btn");
 const filterBtns = document.querySelectorAll(".filters_container > button");
+const filterRange = document.querySelector(".range_container input[type='range']");
+const filterRangeValue = document.querySelector(".range_container .range-value");
 const filterTitle = document.querySelector(".range_container .range_info .range-title");
 const showImg = document.querySelector(".right_container .image_container img");
 
@@ -26,3 +28,9 @@ filterBtns.forEach(button => {
 });
 
 fileUpload.addEventListener("change", loadImg);
+
+const updateRange = () => {
+    filterRangeValue.innerText = `${filterRange.value}%`
+};
+
+filterRange.addEventListener("input", updateRange);
