@@ -40,13 +40,13 @@ filterRange.addEventListener("input", updateRange);
 let count = 1;
 
 rotateLeftBtn.addEventListener("click", () => {
-    counter = count * 90;
+    let counter = count * 90;
     count++;
     showImg.style.transform = `rotate(-${counter}deg)`;
 });
 
 rotateRightBtn.addEventListener("click", () => {
-    counter = count * 90;
+    let counter = count * 90;
     count++;
     showImg.style.transform = `rotate(${counter}deg)`;
 });
