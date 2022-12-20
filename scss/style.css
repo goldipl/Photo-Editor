@@ -106,7 +106,7 @@ body {
     flex-direction: column;
   }
   .photo_editor_container .buttons_container .right_buttons_container .save-image-btn {
-    margin-top: 48px;
+    margin-top: 16px;
   }
   .photo_editor_container .other_options_container > button > i {
     font-size: 24px;
@@ -125,7 +125,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 48px;
 }
 .buttons_container .left_buttons_container > button,
 .buttons_container .right_buttons_container > button {

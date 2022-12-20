@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 48px;
     .left_buttons_container > button,
     .right_buttons_container > button {
         @include button;
