@@ -18,8 +18,9 @@ Project was created with:
 
 ![screenshot](./img/screenshot_desktop.png)
 
-* Mobile version :iphone:     
+* Mobile version :iphone:   
 
+![screenshot](./img/screenshot_mobile.png)
 
 ## Live :star2:
 * https://goldipl.github.io/Photo-Editor/
