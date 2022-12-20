@@ -7,6 +7,8 @@ const filterTitle = document.querySelector(".range_container .range_info .range-
 const showImg = document.querySelector(".right_container .image_container img");
 const rotateLeftBtn = document.querySelector(".other_options_container .rotate-left");
 const rotateRightBtn = document.querySelector(".other_options_container .rotate-right");
+const flipVerticalBtn = document.querySelector(".other_options_container .flip-vertical");
+const flipHorizontalBtn = document.querySelector(".other_options_container .flip-horizontal");
 
 addImgBtn.addEventListener("click", () => fileUpload.click());
 
@@ -49,4 +51,26 @@ rotateRightBtn.addEventListener("click", () => {
     let counter = count * 90;
     count++;
     showImg.style.transform = `rotate(${counter}deg)`;
+});
+
+flipVerticalBtn.addEventListener("click", () => {
+    let vertCounter = 1;
+    if (flipVerticalBtn.classList.contains("flippedX")) {
+        showImg.style.transform = `scaleX(${vertCounter})`;
+        flipVerticalBtn.classList.remove("flippedX");
+    } else {
+        showImg.style.transform = `scaleX(-${vertCounter})`;
+        flipVerticalBtn.classList.add("flippedX");
+    }
+});
+
+flipHorizontalBtn.addEventListener("click", () => {
+    let horizCounter = 1;
+    if (flipVerticalBtn.classList.contains("flippedY")) {
+        showImg.style.transform = `scaleY(${horizCounter})`;
+        flipVerticalBtn.classList.remove("flippedY");
+    } else {
+        showImg.style.transform = `scaleY(-${horizCounter})`;
+        flipVerticalBtn.classList.add("flippedY");
+    }
 });
