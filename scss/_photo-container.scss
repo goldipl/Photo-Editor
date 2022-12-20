@@ -18,6 +18,10 @@
         .left_container {
             margin-right: 40px;
             width: 360px;
+            .filters_container {
+                display: flex;
+                flex-wrap: wrap;
+            }
             h3 {
                 margin-top: 0;
             }
@@ -70,45 +74,54 @@
 }
 
 @media (max-width: 900px) {
+    html, 
     body {
+        overflow-x: hidden;
         height: auto !important;
     }
-    .photo_editor_container .inner_container {
-        flex-direction: column;
-        width: 90vw;
-        .left_container {
-            width: 90vw;
-            margin-right: 0;
-            .range_container,
-            .range_container input {
-                width: 85vw;
-            }
-        }
-        .right_container {
-            margin-top: 32px;
-            .image_container,
-            .image_container img {
-                width: 90vw;
-                max-width: 90vw;
-            }
-        }
-    }
-    .buttons_container {
-        .right_buttons_container {
-            display: flex;
+    .photo_editor_container {
+        width: 85vw;
+        .inner_container {
             flex-direction: column;
-            .save-image-btn {
-                margin-top: 16px;
+            width: 85vw;
+            .left_container {
+                width: 85vw;
+                margin-right: 0;
+                .range_container,
+                .range_container input {
+                    width: 80vw;
+                }
+            }
+            .right_container {
+                margin-top: 32px;
+                .image_container,
+                .image_container img {
+                    width: 85vw;
+                    max-width: 85vw;
+                }
             }
         }
-    }
-    .other_options_container > button > i {
-        font-size: 24px;
+        .buttons_container {
+            .right_buttons_container {
+                display: flex;
+                flex-direction: column;
+                .save-image-btn {
+                    margin-top: 16px;
+                }
+            }
+        }
+        .other_options_container > button > i {
+            font-size: 24px;
+        }
     }
 } 
 
 @media (max-width: 400px) {
-    .other_options_container > button {
-        width: 40vw !important;
+    .photo_editor_container .inner_container .left_container {
+        width: 90vw;
+    }
+    .photo_editor_container .inner_container .left_container .range_container,
+    .photo_editor_container .inner_container .left_container .range_container input {
+        width: 85vw;
     }
 }
