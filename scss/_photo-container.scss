@@ -92,6 +92,7 @@
     }
     .buttons_container {
         .right_buttons_container {
+            display: flex;
             flex-direction: column;
             .save-image-btn {
                 margin-top: 16px;
