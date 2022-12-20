@@ -5,6 +5,8 @@ const filterRange = document.querySelector(".range_container input[type='range']
 const filterRangeValue = document.querySelector(".range_container .range-value");
 const filterTitle = document.querySelector(".range_container .range_info .range-title");
 const showImg = document.querySelector(".right_container .image_container img");
+const rotateLeftBtn = document.querySelector(".other_options_container .rotate-left");
+const rotateRightBtn = document.querySelector(".other_options_container .rotate-right");
 
 addImgBtn.addEventListener("click", () => fileUpload.click());
 
@@ -34,3 +36,17 @@ const updateRange = () => {
 };
 
 filterRange.addEventListener("input", updateRange);
+
+let count = 1;
+
+rotateLeftBtn.addEventListener("click", () => {
+    counter = count * 90;
+    count++;
+    showImg.style.transform = `rotate(-${counter}deg)`;
+});
+
+rotateRightBtn.addEventListener("click", () => {
+    counter = count * 90;
+    count++;
+    showImg.style.transform = `rotate(${counter}deg)`;
+});
