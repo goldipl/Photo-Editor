@@ -70,6 +70,9 @@
 }
 
 @media (max-width: 900px) {
+    body {
+        height: auto !important;
+    }
     .photo_editor_container .inner_container {
         flex-direction: column;
         width: 90vw;
@@ -98,6 +101,9 @@
                 margin-top: 16px;
             }
         }
+    }
+    .other_options_container > button > i {
+        font-size: 24px;
     }
 } 
 
