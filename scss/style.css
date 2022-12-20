@@ -68,6 +68,39 @@
   z-index: 1;
 }
 
+@media (max-width: 900px) {
+  .photo_editor_container .inner_container {
+    flex-direction: column;
+    width: 90vw;
+  }
+  .photo_editor_container .inner_container .left_container {
+    width: 90vw;
+    margin-right: 0;
+  }
+  .photo_editor_container .inner_container .left_container .range_container,
+.photo_editor_container .inner_container .left_container .range_container input {
+    width: 85vw;
+  }
+  .photo_editor_container .inner_container .right_container {
+    margin-top: 32px;
+  }
+  .photo_editor_container .inner_container .right_container .image_container,
+.photo_editor_container .inner_container .right_container .image_container img {
+    width: 90vw;
+    max-width: 90vw;
+  }
+  .buttons_container .right_buttons_container {
+    flex-direction: column;
+  }
+  .buttons_container .right_buttons_container .save-image-btn {
+    margin-top: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .other_options_container > button {
+    width: 40vw !important;
+  }
+}
 .buttons_container {
   display: flex;
   flex-direction: row;
