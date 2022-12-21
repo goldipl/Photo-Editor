@@ -1,3 +1,5 @@
+import { flipHorizontal, flipVertical } from "./flipImage.js";
+import { rotateLeft, rotateRight } from "./rotateImg.js";
 const fileUpload = document.getElementById("file-upload");
 const addImgBtn = document.querySelector(".add-image-btn");
 const filterBtns = document.querySelectorAll(".filters_container > button");
@@ -39,38 +41,8 @@ const updateRange = () => {
 
 filterRange.addEventListener("input", updateRange);
 
-let count = 1;
+rotateLeftBtn.addEventListener("click", () => rotateLeft());
+rotateRightBtn.addEventListener("click", () => rotateRight());
 
-rotateLeftBtn.addEventListener("click", () => {
-    let counter = count * 90;
-    count++;
-    showImg.style.transform = `rotate(-${counter}deg)`;
-});
-
-rotateRightBtn.addEventListener("click", () => {
-    let counter = count * 90;
-    count++;
-    showImg.style.transform = `rotate(${counter}deg)`;
-});
-
-flipVerticalBtn.addEventListener("click", () => {
-    let vertCounter = 1;
-    if (flipVerticalBtn.classList.contains("flippedX")) {
-        showImg.style.transform = `scaleX(${vertCounter})`;
-        flipVerticalBtn.classList.remove("flippedX");
-    } else {
-        showImg.style.transform = `scaleX(-${vertCounter})`;
-        flipVerticalBtn.classList.add("flippedX");
-    }
-});
-
-flipHorizontalBtn.addEventListener("click", () => {
-    let horizCounter = 1;
-    if (flipVerticalBtn.classList.contains("flippedY")) {
-        showImg.style.transform = `scaleY(${horizCounter})`;
-        flipVerticalBtn.classList.remove("flippedY");
-    } else {
-        showImg.style.transform = `scaleY(-${horizCounter})`;
-        flipVerticalBtn.classList.add("flippedY");
-    }
-});
+flipVerticalBtn.addEventListener("click", () => flipVertical());
+flipHorizontalBtn.addEventListener("click", () => flipHorizontal());
