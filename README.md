@@ -1,11 +1,28 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Version](#version)
 * [Screens](#screens)
 * [Live](#live-star2)
 
 ## General info
-Photo Editor
+Photo Editor written using Vanilla JavaScript.    
+You can add your image and change it using available filters:
+* brightness
+* saturation
+* inversion
+* grayscale
+* rotate:
+    * left
+    * right
+* flip:
+    * horizontal
+    * vertical
+
+After editing the image, you can save it for yourself.
+
+## Version
+`1.0` - Photo Editor with 8 filters
 
 ## Technologies
 Project was created with:
