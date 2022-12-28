@@ -1,5 +1,6 @@
 import { flipHorizontal, flipVertical } from "./flipImage.js";
 import { rotateLeft, rotateRight } from "./rotateImg.js";
+import { saveBtn } from "./saveImg.js";
 const fileUpload = document.getElementById("file-upload");
 const addImgBtn = document.querySelector(".add-image-btn");
 const filterBtns = document.querySelectorAll(".filters_container > button");
@@ -12,6 +13,7 @@ const rotateRightBtn = document.querySelector(".other_options_container .rotate-
 const flipVerticalBtn = document.querySelector(".other_options_container .flip-vertical");
 const flipHorizontalBtn = document.querySelector(".other_options_container .flip-horizontal");
 const resetButton = document.querySelector(".left_buttons_container .reset-btn");
+const saveButton = document.querySelector(".right_buttons_container .save-image-btn");
 
 let brightness = 100, saturation = 100, inversion = 0, grayscale = 0;
 
@@ -82,8 +84,8 @@ const resetBtn = () => {
     filterRangeValue.innerText = `100%`;
 }
 
+saveButton.addEventListener("click", saveBtn)
 resetButton.addEventListener("click", resetBtn)
-
 filterRange.addEventListener("input", updateRange);
 
 rotateLeftBtn.addEventListener("click", () => rotateLeft());
