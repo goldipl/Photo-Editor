@@ -12,6 +12,12 @@ const rotateRightBtn = document.querySelector(".other_options_container .rotate-
 const flipVerticalBtn = document.querySelector(".other_options_container .flip-vertical");
 const flipHorizontalBtn = document.querySelector(".other_options_container .flip-horizontal");
 
+let brightness = 100, saturation = 100, inversion = 0, grayscale = 0;
+
+const useFilters = () => {
+    showImg.style.filter =`brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+}
+
 addImgBtn.addEventListener("click", () => fileUpload.click());
 
 const loadImg = () => {
@@ -32,11 +38,41 @@ filterBtns.forEach(button => {
         });
         button.classList.add("active");
         filterTitle.innerText = button.innerText;
+
+        if (button.className === "brightness active") {
+            filterRange.max = "200";
+            filterRange.value = brightness;
+            filterRangeValue.innerText = `${brightness}%`;
+        } else if (button.className === "saturation active") {
+            filterRange.max = "200";
+            filterRange.value = saturation;
+            filterRangeValue.innerText = `${saturation}%`;
+        } else if (button.className === "inversion active") {
+            filterRange.max = "100";
+            filterRange.value = inversion;
+            filterRangeValue.innerText = `${inversion}%`;
+        } else if (button.className === "grayscale active") {
+            filterRange.max = "100";
+            filterRange.value = grayscale;
+            filterRangeValue.innerText = `${grayscale}%`;
+        }
     });
 });
 
 const updateRange = () => {
-    filterRangeValue.innerText = `${filterRange.value}%`
+    filterRangeValue.innerText = `${filterRange.value}%`;
+    const selectedFilter = document.querySelector(".filters_container .active");
+
+    if (selectedFilter.className === "brightness active") {
+        brightness = filterRange.value;
+    } else if (selectedFilter.className === "saturation active") {
+        saturation = filterRange.value;
+    } else if (selectedFilter.className === "inversion active") {
+        inversion = filterRange.value;
+    } else if (selectedFilter.className === "grayscale active") {
+        grayscale = filterRange.value;
+    } 
+    useFilters();
 };
 
 filterRange.addEventListener("input", updateRange);
