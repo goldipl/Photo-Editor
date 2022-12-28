@@ -11,6 +11,7 @@ const rotateLeftBtn = document.querySelector(".other_options_container .rotate-l
 const rotateRightBtn = document.querySelector(".other_options_container .rotate-right");
 const flipVerticalBtn = document.querySelector(".other_options_container .flip-vertical");
 const flipHorizontalBtn = document.querySelector(".other_options_container .flip-horizontal");
+const resetButton = document.querySelector(".left_buttons_container .reset-btn");
 
 let brightness = 100, saturation = 100, inversion = 0, grayscale = 0;
 
@@ -74,6 +75,14 @@ const updateRange = () => {
     } 
     useFilters();
 };
+
+const resetBtn = () => {
+    showImg.style = 0;
+    filterRange.value = 100;
+    filterRangeValue.innerText = `100%`;
+}
+
+resetButton.addEventListener("click", resetBtn)
 
 filterRange.addEventListener("input", updateRange);
 
