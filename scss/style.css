@@ -39,10 +39,14 @@
 .photo_editor_container .inner_container .left_container .range_container input {
   width: 340px;
 }
+.photo_editor_container .inner_container .right_container {
+  display: flex;
+  align-items: center;
+}
 .photo_editor_container .inner_container .right_container .image_container {
   position: relative;
   width: 400px;
-  height: 300px;
+  height: 400px;
 }
 .photo_editor_container .inner_container .right_container .image_container::after {
   position: absolute;
@@ -64,7 +68,7 @@
   margin: auto;
   height: 100%;
   max-width: 400px;
-  max-height: 300px;
+  max-height: 400px;
   -o-object-fit: contain;
      object-fit: contain;
 }
