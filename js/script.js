@@ -15,10 +15,12 @@ const flipHorizontalBtn = document.querySelector(".other_options_container .flip
 const resetButton = document.querySelector(".left_buttons_container .reset-btn");
 const saveButton = document.querySelector(".right_buttons_container .save-image-btn");
 
-let brightness = 100, saturation = 100, inversion = 0, grayscale = 0;
+let brightness = 100, saturation = 100, inversion = 0, grayscale = 0, blur = 0, contrast = 100;
 
 const useFilters = () => {
-    showImg.style.filter =`brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+    showImg.style.filter =`brightness(${brightness}%) 
+        saturate(${saturation}%) invert(${inversion}%) 
+        grayscale(${grayscale}%) blur(${blur}px) contrast(${contrast}%)`;
 }
 
 addImgBtn.addEventListener("click", () => fileUpload.click());
@@ -58,6 +60,14 @@ filterBtns.forEach(button => {
             filterRange.max = "100";
             filterRange.value = grayscale;
             filterRangeValue.innerText = `${grayscale}%`;
+        } else if (button.className === "blur active") {
+            filterRange.max = "20";
+            filterRange.value = blur;
+            filterRangeValue.innerText = `${blur}px`;
+        } else if (button.className === "contrast active") {
+            filterRange.max = "200";
+            filterRange.value = contrast;
+            filterRangeValue.innerText = `${contrast}%`;
         }
     });
 });
@@ -74,6 +84,11 @@ const updateRange = () => {
         inversion = filterRange.value;
     } else if (selectedFilter.className === "grayscale active") {
         grayscale = filterRange.value;
+    } else if (selectedFilter.className === "blur active") {
+        blur = filterRange.value;
+        filterRangeValue.innerText = `${filterRange.value}px`;
+    } else if (selectedFilter.className === "contrast active") {
+        contrast = filterRange.value;
     } 
     useFilters();
 };
