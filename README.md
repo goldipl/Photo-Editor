@@ -18,11 +18,14 @@ You can add your image and change it using available filters:
 * flip:
     * horizontal
     * vertical
+* blur  
+* contrast  
 
 After editing the image, you can save it for yourself.
 
 ## Version
-`1.0` - Photo Editor with 8 filters
+`1.0` - Photo Editor with 8 filters  
+`1.1` - Photo Editor with 10 filters
 
 ## Technologies
 Project was created with:
