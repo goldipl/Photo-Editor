@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Version](#version)
-* [Screens](#screens)
+* [Screenshots](#screenshots)
 * [Live](#live-star2)
 
 ## General info
@@ -33,7 +33,7 @@ Project was created with:
 * SCSS
 * JavaScript
 
-## Screens
+## Screenshots
 * Desktop version :computer:     
 
 ![screenshot](./img/screenshot_desktop.png)
