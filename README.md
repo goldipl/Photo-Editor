@@ -25,8 +25,8 @@ After editing the image, you can save it for yourself.
 
 ## Version
 `1.0` - Photo Editor with 8 filters  
-`1.1` - Photo Editor with 10 filters
-`1.2` - added modal to inform about adding a photo before using filters
+`1.1` - Photo Editor with 10 filters  
+`1.2` - Added modal to inform about adding a photo before using filters
 
 ## Technologies
 Project was created with:
