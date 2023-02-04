@@ -35,6 +35,10 @@ Project was created with:
 * Micromodal.js
 
 ## Screenshots
+* Important info before starting the app. If you run the app for the first time then you will see a modal telling you to add a photo before applying filters.    
+
+![screenshot](./img/screenshot_modal.png)
+
 * Desktop version :computer:     
 
 ![screenshot](./img/screenshot_desktop.png)
