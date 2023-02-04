@@ -34,6 +34,7 @@ Project was created with:
 * SCSS
 * JavaScript
 * Micromodal.js
+* Boxicons
 
 ## Screenshots
 * Important info before starting the app. If you run the app for the first time then you will see a modal telling you to add a photo before applying filters.    
