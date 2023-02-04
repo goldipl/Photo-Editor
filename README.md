@@ -32,6 +32,7 @@ Project was created with:
 * HTML5
 * SCSS
 * JavaScript
+* Micromodal.js
 
 ## Screenshots
 * Desktop version :computer:     
