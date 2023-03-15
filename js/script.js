@@ -95,7 +95,12 @@ const updateRange = () => {
 
 const resetBtn = () => {
     showImg.style = 0;
-    filterRange.value = 100;
+    brightness = 100;
+    saturation = 100;
+    contrast = 100;
+    inversion = 0;
+    blur = 0;
+    contrast = 0;
     filterRangeValue.innerText = `100%`;
 }
 
