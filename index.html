@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./scss/style.css">
-    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Photo Editor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhotoEdit — Image Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="photo_editor_container">
-        <div class="title_container">
-            <h2>Photo Editor</h2>
-        </div>
-        <div class="inner_container">
-            <div class="left_container">
-                <h3>Filters</h3>
-                <div class="filters_container">
-                    <button class="brightness active">Brightness</button>
-                    <button class="saturation">Saturation</button>
-                    <button class="inversion">Inversion</button>
-                    <button class="grayscale">Grayscale</button>
-                    <button class="blur">Blur</button>
-                    <button class="contrast">Contrast</button>
-                </div>
-                <div class="range_container">
-                    <div class="range_info">
-                        <p class="range-title">Brightness</p>
-                        <p class="range-value">100%</p>
-                    </div>
-                    <input type="range" name="range" id="range" value="100" min="0" max="200">
-                </div>
-                <div class="other_options_container">
-                    <button class="rotate-left"><i class='bx bx-rotate-left' ></i></button>
-                    <button class="rotate-right"><i class='bx bx-rotate-right' ></i></button>
-                    <button class="flip-vertical"><i class='bx bx-reflect-vertical' ></i></button>
-                    <button class="flip-horizontal"><i class='bx bx-reflect-horizontal' ></i></button>
-                </div>
-            </div>
-            <div class="right_container">
-                <div class="image_container">
-                    <img src="./img/sample-img.jpg" alt="image">
-                </div>
-            </div>
-        </div>
-        <div class="buttons_container">
-            <div class="left_buttons_container">
-                <button class="reset-btn">Reset <i class='bx bx-reset' ></i></button>
-            </div>
-            <div class="right_buttons_container">
-                <input type="file" id="file-upload" accept="image/*" style="display: none">
-                <button class="add-image-btn">Add <i class='bx bx-image-add'></i></button>
-                <button class="save-image-btn">Save <i class='bx bx-save' ></i></button>
-            </div>
-        </div>
+
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="brand-text">PhotoEdit.
+        <span>Fast, clean image editing</span>
+      </div>
     </div>
-    <!-- Micromodal template -->
-    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <header class="modal__header">
-              <h2 class="modal__title" id="modal-1-title">
-                Important information 
-                <i class='bx bxs-alarm-exclamation'></i>
-              </h2>
-            </header>
-            <main class="modal__content" id="modal-1-content">
-              <p>
-                If you want to use PhotoEditor firstly add your photo.
-              </p>
-            </main>
-            <footer class="modal__footer">
-              <button class="modal__btn modal__btn-primary close">ok</button>
-            </footer>
+    <div class="topbar-actions">
+      <button class="pill-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+      <button class="pill-btn solid" id="save-btn-top"><i class="fa-solid fa-download"></i> Export</button>
+    </div>
+  </div>
+
+  <div class="editor-grid">
+
+    <!-- LEFT PANEL -->
+    <div class="panel-left">
+
+      <div>
+        <div class="section-label"><i class="fa-solid fa-image"></i> Image</div>
+        <div class="upload-card add-image-btn">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <p>Upload a photo</p>
+          <small>PNG, JPG up to 10MB</small>
+        </div>
+        <input type="file" id="file-upload" accept="image/*">
+      </div>
+
+      <div>
+        <div class="section-label"><i class="fa-solid fa-sliders"></i> Filters</div>
+        <div class="filters_container filter-grid">
+          <button class="filter-chip brightness active"><i class="fa-solid fa-sun"></i>Brightness</button>
+          <button class="filter-chip saturation"><i class="fa-solid fa-droplet"></i>Saturation</button>
+          <button class="filter-chip inversion"><i class="fa-solid fa-circle-half-stroke"></i>Invert</button>
+          <button class="filter-chip grayscale"><i class="fa-solid fa-circle-notch"></i>Grayscale</button>
+          <button class="filter-chip blur"><i class="fa-solid fa-water"></i>Blur</button>
+          <button class="filter-chip contrast"><i class="fa-solid fa-circle-half-stroke"></i>Contrast</button>
+        </div>
+      </div>
+
+      <div class="range_container">
+        <div class="range-card">
+          <div class="range-head range_info">
+            <span class="name range-title">Brightness</span>
+            <span class="value range-value">100%</span>
           </div>
+          <input type="range" min="0" max="200" value="100">
         </div>
+      </div>
+
+      <div>
+        <div class="section-label"><i class="fa-solid fa-rotate"></i> Transform</div>
+        <div class="other_options_container transform-row">
+          <button class="icon-btn rotate-left"><i class="fa-solid fa-rotate-left"></i>Left</button>
+          <button class="icon-btn rotate-right"><i class="fa-solid fa-rotate-right"></i>Right</button>
+          <button class="icon-btn flip-horizontal"><i class="fa-solid fa-arrows-up-down"></i>Flip V</button>
+          <button class="icon-btn flip-vertical"><i class="fa-solid fa-arrows-left-right"></i>Flip H</button>
+        </div>
+      </div>
+
+      <div class="left_buttons_container" style="margin-top:auto;">
+        <button class="reset-link reset-btn"><i class="fa-solid fa-arrow-rotate-left"></i> Reset all edits</button>
+      </div>
+
     </div>
-    <script type="module" src="./js/script.js"></script>
-    <!-- Micromodal js -->
-    <script src="./js/micromodal.js"></script>
-    </script>
+
+    <!-- RIGHT / CANVAS -->
+    <div class="panel-right right_container">
+      <div class="canvas-frame image_container">
+        <div class="empty-state">
+          <i class="fa-regular fa-image"></i>
+          <p>No image yet</p>
+          <small>Upload a photo to start editing</small>
+        </div>
+        <img id="show-img" src="" alt="">
+      </div>
+
+      <div class="right_buttons_container bottom-actions">
+        <button class="btn-primary ghost" id="reset-btn-bottom"><i class="fa-solid fa-rotate-left"></i></button>
+        <button class="btn-primary save-image-btn"><i class="fa-solid fa-download"></i> Save Image</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="./js/script.js"></script>
+
 </body>
 </html>
